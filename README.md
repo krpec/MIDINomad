@@ -1,4 +1,4 @@
-# MIDINomad
+# MIDI Nomad
 
 Arduino-based MIDI capable footswitch replacement for Mesa/Boogie Nomad 100 head.
 
