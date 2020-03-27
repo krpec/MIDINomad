@@ -13,7 +13,7 @@ SOLO = 4
 With the formula applied, this is the list of all possible programs for Nomad 100:
 
 0.  CH1
-1.  CH1 EQX
+1.  CH1 EQ
 2.  CH1    REV
 3.  CH1 EQ REV
 4.  CH1        SOLO
