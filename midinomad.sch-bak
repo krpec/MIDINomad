@@ -1,0 +1,1011 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "MIDI Nomad"
+Date "2020-03-26"
+Rev "2"
+Comp "krpec - dittrich.r@gmail.com"
+Comment1 "Missing Nomad 100 DIN connector pinout."
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 5E7C6234
+P 1200 1150
+F 0 "J?" H 1200 875 50  0000 C CNN
+F 1 "DIN-5_180degree" H 1200 784 50  0000 C CNN
+F 2 "" H 1200 1150 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 1200 1150 50  0001 C CNN
+	1    1200 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DIN-8 J?
+U 1 1 5E7C7CED
+P 9200 1400
+F 0 "J?" H 9200 1881 50  0000 C CNN
+F 1 "DIN-8" H 9200 1790 50  0000 C CNN
+F 2 "" H 9200 1400 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9200 1400 50  0001 C CNN
+	1    9200 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A1
+U 1 1 5E7CDAC3
+P 4850 3350
+F 0 "A1" H 4850 2261 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 4850 2170 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 4850 3350 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4850 3350 50  0001 C CNN
+	1    4850 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4148 D1
+U 1 1 5E7D06A3
+P 2150 1100
+F 0 "D1" V 2104 1179 50  0000 L CNN
+F 1 "1N4148" V 2195 1179 50  0000 L CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2150 925 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2150 1100 50  0001 C CNN
+	1    2150 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:6N138 U1
+U 1 1 5E7D308B
+P 3000 1150
+F 0 "U1" H 3000 1617 50  0000 C CNN
+F 1 "6N138" H 3000 1526 50  0000 C CNN
+F 2 "" H 3290 850 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 3290 850 50  0001 C CNN
+	1    3000 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E7DA868
+P 1900 750
+F 0 "R1" V 1693 750 50  0000 C CNN
+F 1 "220R" V 1784 750 50  0000 C CNN
+F 2 "" V 1830 750 50  0001 C CNN
+F 3 "~" H 1900 750 50  0001 C CNN
+	1    1900 750 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	900  1050 900  750 
+Wire Wire Line
+	900  750  1750 750 
+Wire Wire Line
+	2050 750  2150 750 
+Wire Wire Line
+	2150 750  2150 950 
+Wire Wire Line
+	2700 1050 2700 750 
+Wire Wire Line
+	2700 750  2150 750 
+Connection ~ 2150 750 
+Wire Wire Line
+	2700 1250 2150 1250
+Wire Wire Line
+	1500 1050 1750 1050
+Wire Wire Line
+	1750 1050 1750 1250
+Wire Wire Line
+	1750 1250 2150 1250
+Connection ~ 2150 1250
+$Comp
+L Device:R R2
+U 1 1 5E7EE9BB
+P 3950 1100
+F 0 "R2" H 4020 1146 50  0000 L CNN
+F 1 "220R " H 4020 1055 50  0000 L CNN
+F 2 "" V 3880 1100 50  0001 C CNN
+F 3 "~" H 3950 1100 50  0001 C CNN
+	1    3950 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E7F2ACA
+P 3750 1500
+F 0 "R3" H 3820 1546 50  0000 L CNN
+F 1 "4k7" H 3820 1455 50  0000 L CNN
+F 2 "" V 3680 1500 50  0001 C CNN
+F 3 "~" H 3750 1500 50  0001 C CNN
+	1    3750 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E7F6EDF
+P 4850 4650
+F 0 "#PWR?" H 4850 4400 50  0001 C CNN
+F 1 "GNDREF" H 4855 4477 50  0000 C CNN
+F 2 "" H 4850 4650 50  0001 C CNN
+F 3 "" H 4850 4650 50  0001 C CNN
+	1    4850 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 4350 4850 4400
+Wire Wire Line
+	4850 4400 4950 4400
+Wire Wire Line
+	4950 4400 4950 4350
+Connection ~ 4850 4400
+Wire Wire Line
+	4850 4400 4850 4650
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E7F88CD
+P 3450 1800
+F 0 "#PWR?" H 3450 1550 50  0001 C CNN
+F 1 "GNDREF" H 3455 1627 50  0000 C CNN
+F 2 "" H 3450 1800 50  0001 C CNN
+F 3 "" H 3450 1800 50  0001 C CNN
+	1    3450 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E7F901E
+P 3750 1800
+F 0 "#PWR?" H 3750 1550 50  0001 C CNN
+F 1 "GNDREF" H 3755 1627 50  0000 C CNN
+F 2 "" H 3750 1800 50  0001 C CNN
+F 3 "" H 3750 1800 50  0001 C CNN
+	1    3750 1800
+	1    0    0    -1  
+$EndComp
+Text GLabel 3950 750  1    50   Input ~ 0
++5V
+Wire Wire Line
+	3950 750  3950 950 
+Connection ~ 3950 950 
+Text GLabel 5050 2250 1    50   BiDi ~ 0
++5V
+Wire Wire Line
+	5050 2250 5050 2350
+Text GLabel 4100 1250 2    50   Input ~ 0
+Rx
+Wire Wire Line
+	4100 1250 3950 1250
+Connection ~ 3950 1250
+Wire Wire Line
+	3300 950  3950 950 
+Wire Wire Line
+	3300 1250 3950 1250
+Wire Wire Line
+	3750 1800 3750 1650
+Wire Wire Line
+	3750 1350 3750 1050
+Wire Wire Line
+	3300 1050 3750 1050
+Wire Wire Line
+	3450 1350 3300 1350
+Wire Wire Line
+	3450 1350 3450 1800
+Text GLabel 3750 2750 0    50   Input ~ 0
+Rx
+$Comp
+L Device:R R4
+U 1 1 5E81C3D0
+P 1800 2550
+F 0 "R4" V 1593 2550 50  0000 C CNN
+F 1 "4k7" V 1684 2550 50  0000 C CNN
+F 2 "" V 1730 2550 50  0001 C CNN
+F 3 "~" H 1800 2550 50  0001 C CNN
+	1    1800 2550
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5E81CCCF
+P 1800 2950
+F 0 "R5" V 1593 2950 50  0000 C CNN
+F 1 "470R" V 1684 2950 50  0000 C CNN
+F 2 "" V 1730 2950 50  0001 C CNN
+F 3 "~" H 1800 2950 50  0001 C CNN
+	1    1800 2950
+	0    -1   1    0   
+$EndComp
+$Comp
+L Diode:1N4148 D2
+U 1 1 5E81D1A3
+P 2100 2550
+F 0 "D2" H 2100 2334 50  0000 C CNN
+F 1 "1N4148" H 2100 2425 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2100 2375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2100 2550 50  0001 C CNN
+	1    2100 2550
+	1    0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D3
+U 1 1 5E81DEA1
+P 2100 2950
+F 0 "D3" H 2100 2734 50  0000 C CNN
+F 1 "1N4148" H 2100 2825 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2100 2775 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2100 2950 50  0001 C CNN
+	1    2100 2950
+	1    0    0    1   
+$EndComp
+Text GLabel 2700 2750 2    50   Output ~ 0
+MESA_VCH
+$Comp
+L Device:R R6
+U 1 1 5E8372A3
+P 2500 2400
+F 0 "R6" H 2570 2446 50  0000 L CNN
+F 1 "10k" H 2570 2355 50  0000 L CNN
+F 2 "" V 2430 2400 50  0001 C CNN
+F 3 "~" H 2500 2400 50  0001 C CNN
+	1    2500 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5E83794E
+P 2500 3100
+F 0 "R7" H 2570 3146 50  0000 L CNN
+F 1 "8k2" H 2570 3055 50  0000 L CNN
+F 2 "" V 2430 3100 50  0001 C CNN
+F 3 "~" H 2500 3100 50  0001 C CNN
+	1    2500 3100
+	-1   0    0    -1  
+$EndComp
+Text GLabel 2500 2250 1    50   Input ~ 0
++5V
+$Comp
+L Device:R R8
+U 1 1 5E839E2C
+P 2500 3400
+F 0 "R8" H 2570 3446 50  0000 L CNN
+F 1 "300R" H 2570 3355 50  0000 L CNN
+F 2 "" V 2430 3400 50  0001 C CNN
+F 3 "~" H 2500 3400 50  0001 C CNN
+	1    2500 3400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E83A819
+P 2500 3550
+F 0 "#PWR?" H 2500 3300 50  0001 C CNN
+F 1 "GNDREF" H 2505 3377 50  0000 C CNN
+F 2 "" H 2500 3550 50  0001 C CNN
+F 3 "" H 2500 3550 50  0001 C CNN
+	1    2500 3550
+	-1   0    0    -1  
+$EndComp
+Text GLabel 4350 3150 0    50   Output ~ 0
+Arduino_D4
+Text GLabel 4350 3250 0    50   Output ~ 0
+Arduino_D5
+NoConn ~ 5350 3950
+NoConn ~ 5350 4050
+NoConn ~ 5350 3150
+NoConn ~ 9200 1700
+NoConn ~ 1500 1150
+NoConn ~ 900  1150
+Text GLabel 4350 3350 0    50   Output ~ 0
+Arduino_D6
+Text GLabel 1650 4750 0    50   Input ~ 0
+Arduino_D4
+$Comp
+L Device:R R?
+U 1 1 5E858A5D
+P 1950 4250
+F 0 "R?" H 2020 4296 50  0000 L CNN
+F 1 "10k" H 2020 4205 50  0000 L CNN
+F 2 "" V 1880 4250 50  0001 C CNN
+F 3 "~" H 1950 4250 50  0001 C CNN
+	1    1950 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E859217
+P 2350 4250
+F 0 "R?" H 2420 4296 50  0000 L CNN
+F 1 "220R" H 2420 4205 50  0000 L CNN
+F 2 "" V 2280 4250 50  0001 C CNN
+F 3 "~" H 2350 4250 50  0001 C CNN
+	1    2350 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E859915
+P 2350 4550
+F 0 "D?" V 2389 4433 50  0000 R CNN
+F 1 "LED" V 2298 4433 50  0000 R CNN
+F 2 "" H 2350 4550 50  0001 C CNN
+F 3 "~" H 2350 4550 50  0001 C CNN
+	1    2350 4550
+	0    -1   -1   0   
+$EndComp
+Text GLabel 1950 4100 1    50   Input ~ 0
++5V
+Text GLabel 2350 4100 1    50   Input ~ 0
++5V
+Wire Wire Line
+	1650 4750 1950 4750
+Wire Wire Line
+	2350 4750 2350 4700
+Wire Wire Line
+	1950 4400 1950 4750
+Connection ~ 1950 4750
+Wire Wire Line
+	1950 4750 2350 4750
+Text GLabel 2700 4750 2    50   Output ~ 0
+MESA_SWA_(SOLO)
+Wire Wire Line
+	2700 4750 2350 4750
+Connection ~ 2350 4750
+Text GLabel 1650 4900 0    50   Input ~ 0
+Arduino_D5
+$Comp
+L Device:R R?
+U 1 1 5E85DD9C
+P 1950 5200
+F 0 "R?" H 2020 5246 50  0000 L CNN
+F 1 "10k" H 2020 5155 50  0000 L CNN
+F 2 "" V 1880 5200 50  0001 C CNN
+F 3 "~" H 1950 5200 50  0001 C CNN
+	1    1950 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E860A60
+P 2350 5200
+F 0 "R?" H 2420 5246 50  0000 L CNN
+F 1 "220R" H 2420 5155 50  0000 L CNN
+F 2 "" V 2280 5200 50  0001 C CNN
+F 3 "~" H 2350 5200 50  0001 C CNN
+	1    2350 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E860DCF
+P 2350 5500
+F 0 "D?" V 2389 5383 50  0000 R CNN
+F 1 "LED" V 2298 5383 50  0000 R CNN
+F 2 "" H 2350 5500 50  0001 C CNN
+F 3 "~" H 2350 5500 50  0001 C CNN
+	1    2350 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1950 5050 1950 4900
+Wire Wire Line
+	1950 4900 1650 4900
+Wire Wire Line
+	1950 4900 2350 4900
+Wire Wire Line
+	2350 4900 2350 5050
+Connection ~ 1950 4900
+Text GLabel 2700 4900 2    50   Output ~ 0
+MESA_SWB_(REV)
+Wire Wire Line
+	2350 4900 2700 4900
+Connection ~ 2350 4900
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E86383D
+P 2350 5650
+F 0 "#PWR?" H 2350 5400 50  0001 C CNN
+F 1 "GNDREF" H 2355 5477 50  0000 C CNN
+F 2 "" H 2350 5650 50  0001 C CNN
+F 3 "" H 2350 5650 50  0001 C CNN
+	1    2350 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E8639DB
+P 1950 5650
+F 0 "#PWR?" H 1950 5400 50  0001 C CNN
+F 1 "GNDREF" H 1955 5477 50  0000 C CNN
+F 2 "" H 1950 5650 50  0001 C CNN
+F 3 "" H 1950 5650 50  0001 C CNN
+	1    1950 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 5650 1950 5350
+Text GLabel 1650 6900 0    50   Input ~ 0
+Arduino_D6
+$Comp
+L Device:R R?
+U 1 1 5E867E1A
+P 1950 6400
+F 0 "R?" H 2020 6446 50  0000 L CNN
+F 1 "10k" H 2020 6355 50  0000 L CNN
+F 2 "" V 1880 6400 50  0001 C CNN
+F 3 "~" H 1950 6400 50  0001 C CNN
+	1    1950 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E867E20
+P 2350 6400
+F 0 "R?" H 2420 6446 50  0000 L CNN
+F 1 "220R" H 2420 6355 50  0000 L CNN
+F 2 "" V 2280 6400 50  0001 C CNN
+F 3 "~" H 2350 6400 50  0001 C CNN
+	1    2350 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E867E26
+P 2350 6700
+F 0 "D?" V 2389 6583 50  0000 R CNN
+F 1 "LED" V 2298 6583 50  0000 R CNN
+F 2 "" H 2350 6700 50  0001 C CNN
+F 3 "~" H 2350 6700 50  0001 C CNN
+	1    2350 6700
+	0    -1   -1   0   
+$EndComp
+Text GLabel 1950 6250 1    50   Input ~ 0
++5V
+Text GLabel 2350 6250 1    50   Input ~ 0
++5V
+Wire Wire Line
+	1650 6900 1950 6900
+Wire Wire Line
+	2350 6900 2350 6850
+Wire Wire Line
+	1950 6550 1950 6900
+Connection ~ 1950 6900
+Wire Wire Line
+	1950 6900 2350 6900
+Text GLabel 2700 6900 2    50   Output ~ 0
+MESA_SWC_(EQ)
+Wire Wire Line
+	2700 6900 2350 6900
+Connection ~ 2350 6900
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 5E86B2C8
+P 6250 1400
+F 0 "J?" H 6250 1125 50  0000 C CNN
+F 1 "DIN-5_180degree" H 6250 1034 50  0000 C CNN
+F 2 "" H 6250 1400 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 6250 1400 50  0001 C CNN
+	1    6250 1400
+	1    0    0    -1  
+$EndComp
+Text GLabel 5950 1400 0    50   Output ~ 0
+-3V
+Text GLabel 6250 1100 1    50   Output ~ 0
++2V
+Text GLabel 6550 1400 2    50   Input ~ 0
+MESA_VCH
+Text GLabel 5950 1300 0    50   Input ~ 0
+MESA_SWB_(REV)
+Text GLabel 6550 1300 2    50   Input ~ 0
+MESA_SWA_(SOLO)
+NoConn ~ 6250 900 
+NoConn ~ 5750 1400
+Text GLabel 4350 3450 0    50   Output ~ 0
+Arduino_D7
+Text GLabel 4350 2950 0    50   Output ~ 0
+Arduino_D2
+Text GLabel 4350 3050 0    50   Output ~ 0
+Arduino_D3
+Text GLabel 1650 2550 0    50   Input ~ 0
+Arduino_D2
+Text GLabel 1650 2950 0    50   Input ~ 0
+Arduino_D3
+Wire Wire Line
+	2700 2750 2500 2750
+Connection ~ 2500 2750
+Wire Wire Line
+	2500 2750 2500 2950
+Wire Wire Line
+	2500 2750 2250 2750
+Connection ~ 2250 2750
+Wire Wire Line
+	2250 2750 2250 2950
+Wire Wire Line
+	2250 2550 2250 2750
+Wire Wire Line
+	2500 2550 2500 2750
+NoConn ~ 4350 2850
+$Comp
+L Device:Jumper JP?
+U 1 1 5E944A1A
+P 4050 2750
+F 0 "JP?" H 4050 3014 50  0000 C CNN
+F 1 "Jumper" H 4050 2923 50  0000 C CNN
+F 2 "" H 4050 2750 50  0001 C CNN
+F 3 "~" H 4050 2750 50  0001 C CNN
+	1    4050 2750
+	1    0    0    -1  
+$EndComp
+Text GLabel 4350 3550 0    50   Output ~ 0
+Arduino_D8
+Text GLabel 4350 3650 0    50   Output ~ 0
+Arduino_D9
+Text GLabel 4300 5200 0    50   Input ~ 0
+Arduino_D7
+$Comp
+L Device:R R?
+U 1 1 5E953307
+P 4450 5350
+F 0 "R?" H 4380 5304 50  0000 R CNN
+F 1 "10k" H 4380 5395 50  0000 R CNN
+F 2 "" V 4380 5350 50  0001 C CNN
+F 3 "~" H 4450 5350 50  0001 C CNN
+	1    4450 5350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E953A52
+P 4750 5200
+F 0 "R?" V 4543 5200 50  0000 C CNN
+F 1 "220R" V 4634 5200 50  0000 C CNN
+F 2 "" V 4680 5200 50  0001 C CNN
+F 3 "~" H 4750 5200 50  0001 C CNN
+	1    4750 5200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E953EFF
+P 5050 5200
+F 0 "D?" H 5043 4945 50  0000 C CNN
+F 1 "LED" H 5043 5036 50  0000 C CNN
+F 2 "" H 5050 5200 50  0001 C CNN
+F 3 "~" H 5050 5200 50  0001 C CNN
+	1    5050 5200
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E95DE8D
+P 5200 5200
+F 0 "#PWR?" H 5200 4950 50  0001 C CNN
+F 1 "GNDREF" H 5205 5027 50  0000 C CNN
+F 2 "" H 5200 5200 50  0001 C CNN
+F 3 "" H 5200 5200 50  0001 C CNN
+	1    5200 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 5200 4450 5200
+Connection ~ 4450 5200
+Wire Wire Line
+	4450 5200 4600 5200
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E95F3BC
+P 4450 5500
+F 0 "#PWR?" H 4450 5250 50  0001 C CNN
+F 1 "GNDREF" H 4455 5327 50  0000 C CNN
+F 2 "" H 4450 5500 50  0001 C CNN
+F 3 "" H 4450 5500 50  0001 C CNN
+	1    4450 5500
+	1    0    0    -1  
+$EndComp
+Text GLabel 4300 6050 0    50   Input ~ 0
+Arduino_D8
+$Comp
+L Device:R R?
+U 1 1 5E963E48
+P 4450 6200
+F 0 "R?" H 4380 6154 50  0000 R CNN
+F 1 "10k" H 4380 6245 50  0000 R CNN
+F 2 "" V 4380 6200 50  0001 C CNN
+F 3 "~" H 4450 6200 50  0001 C CNN
+	1    4450 6200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E963E4E
+P 4750 6050
+F 0 "R?" V 4543 6050 50  0000 C CNN
+F 1 "220R" V 4634 6050 50  0000 C CNN
+F 2 "" V 4680 6050 50  0001 C CNN
+F 3 "~" H 4750 6050 50  0001 C CNN
+	1    4750 6050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E963E54
+P 5050 6050
+F 0 "D?" H 5043 5795 50  0000 C CNN
+F 1 "LED" H 5043 5886 50  0000 C CNN
+F 2 "" H 5050 6050 50  0001 C CNN
+F 3 "~" H 5050 6050 50  0001 C CNN
+	1    5050 6050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E963E5A
+P 5200 6050
+F 0 "#PWR?" H 5200 5800 50  0001 C CNN
+F 1 "GNDREF" H 5205 5877 50  0000 C CNN
+F 2 "" H 5200 6050 50  0001 C CNN
+F 3 "" H 5200 6050 50  0001 C CNN
+	1    5200 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 6050 4450 6050
+Connection ~ 4450 6050
+Wire Wire Line
+	4450 6050 4600 6050
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E963E63
+P 4450 6350
+F 0 "#PWR?" H 4450 6100 50  0001 C CNN
+F 1 "GNDREF" H 4455 6177 50  0000 C CNN
+F 2 "" H 4450 6350 50  0001 C CNN
+F 3 "" H 4450 6350 50  0001 C CNN
+	1    4450 6350
+	1    0    0    -1  
+$EndComp
+Text GLabel 4300 6850 0    50   Input ~ 0
+Arduino_D9
+$Comp
+L Device:R R?
+U 1 1 5E9685C4
+P 4450 7000
+F 0 "R?" H 4380 6954 50  0000 R CNN
+F 1 "10k" H 4380 7045 50  0000 R CNN
+F 2 "" V 4380 7000 50  0001 C CNN
+F 3 "~" H 4450 7000 50  0001 C CNN
+	1    4450 7000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9685CA
+P 4750 6850
+F 0 "R?" V 4543 6850 50  0000 C CNN
+F 1 "220R" V 4634 6850 50  0000 C CNN
+F 2 "" V 4680 6850 50  0001 C CNN
+F 3 "~" H 4750 6850 50  0001 C CNN
+	1    4750 6850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E9685D0
+P 5050 6850
+F 0 "D?" H 5043 6595 50  0000 C CNN
+F 1 "LED" H 5043 6686 50  0000 C CNN
+F 2 "" H 5050 6850 50  0001 C CNN
+F 3 "~" H 5050 6850 50  0001 C CNN
+	1    5050 6850
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E9685D6
+P 5200 6850
+F 0 "#PWR?" H 5200 6600 50  0001 C CNN
+F 1 "GNDREF" H 5205 6677 50  0000 C CNN
+F 2 "" H 5200 6850 50  0001 C CNN
+F 3 "" H 5200 6850 50  0001 C CNN
+	1    5200 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 6850 4450 6850
+Connection ~ 4450 6850
+Wire Wire Line
+	4450 6850 4600 6850
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E9685DF
+P 4450 7150
+F 0 "#PWR?" H 4450 6900 50  0001 C CNN
+F 1 "GNDREF" H 4455 6977 50  0000 C CNN
+F 2 "" H 4450 7150 50  0001 C CNN
+F 3 "" H 4450 7150 50  0001 C CNN
+	1    4450 7150
+	1    0    0    -1  
+$EndComp
+Text GLabel 4350 3750 0    50   Output ~ 0
+Arduino_D10
+Text GLabel 4350 3850 0    50   Output ~ 0
+Arduino_D11
+Text GLabel 4350 3950 0    50   Output ~ 0
+Arduino_D12
+Text GLabel 6900 4000 0    50   Input ~ 0
+Arduino_D10
+$Comp
+L Device:R R?
+U 1 1 5E9865DF
+P 7150 3750
+F 0 "R?" H 7220 3796 50  0000 L CNN
+F 1 "10k" H 7220 3705 50  0000 L CNN
+F 2 "" V 7080 3750 50  0001 C CNN
+F 3 "~" H 7150 3750 50  0001 C CNN
+	1    7150 3750
+	1    0    0    -1  
+$EndComp
+Text GLabel 7150 3600 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E9875B6
+P 7600 4000
+F 0 "SW?" H 7600 4285 50  0000 C CNN
+F 1 "SW_Push" H 7600 4194 50  0000 C CNN
+F 2 "" H 7600 4200 50  0001 C CNN
+F 3 "~" H 7600 4200 50  0001 C CNN
+	1    7600 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E98CB37
+P 7800 4000
+F 0 "#PWR?" H 7800 3750 50  0001 C CNN
+F 1 "GNDREF" H 7805 3827 50  0000 C CNN
+F 2 "" H 7800 4000 50  0001 C CNN
+F 3 "" H 7800 4000 50  0001 C CNN
+	1    7800 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4000 7150 4000
+Wire Wire Line
+	7150 3900 7150 4000
+Connection ~ 7150 4000
+Wire Wire Line
+	7150 4000 6900 4000
+Text GLabel 6900 4850 0    50   Input ~ 0
+Arduino_D11
+$Comp
+L Device:R R?
+U 1 1 5E991B78
+P 7150 4600
+F 0 "R?" H 7220 4646 50  0000 L CNN
+F 1 "10k" H 7220 4555 50  0000 L CNN
+F 2 "" V 7080 4600 50  0001 C CNN
+F 3 "~" H 7150 4600 50  0001 C CNN
+	1    7150 4600
+	1    0    0    -1  
+$EndComp
+Text GLabel 7150 4450 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E991B7F
+P 7600 4850
+F 0 "SW?" H 7600 5135 50  0000 C CNN
+F 1 "SW_Push" H 7600 5044 50  0000 C CNN
+F 2 "" H 7600 5050 50  0001 C CNN
+F 3 "~" H 7600 5050 50  0001 C CNN
+	1    7600 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E991B85
+P 7800 4850
+F 0 "#PWR?" H 7800 4600 50  0001 C CNN
+F 1 "GNDREF" H 7805 4677 50  0000 C CNN
+F 2 "" H 7800 4850 50  0001 C CNN
+F 3 "" H 7800 4850 50  0001 C CNN
+	1    7800 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4850 7150 4850
+Wire Wire Line
+	7150 4750 7150 4850
+Connection ~ 7150 4850
+Wire Wire Line
+	7150 4850 6900 4850
+Text GLabel 6900 5700 0    50   Input ~ 0
+Arduino_D12
+$Comp
+L Device:R R?
+U 1 1 5E993A8A
+P 7150 5450
+F 0 "R?" H 7220 5496 50  0000 L CNN
+F 1 "10k" H 7220 5405 50  0000 L CNN
+F 2 "" V 7080 5450 50  0001 C CNN
+F 3 "~" H 7150 5450 50  0001 C CNN
+	1    7150 5450
+	1    0    0    -1  
+$EndComp
+Text GLabel 7150 5300 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E993A91
+P 7600 5700
+F 0 "SW?" H 7600 5985 50  0000 C CNN
+F 1 "SW_Push" H 7600 5894 50  0000 C CNN
+F 2 "" H 7600 5900 50  0001 C CNN
+F 3 "~" H 7600 5900 50  0001 C CNN
+	1    7600 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E993A97
+P 7800 5700
+F 0 "#PWR?" H 7800 5450 50  0001 C CNN
+F 1 "GNDREF" H 7805 5527 50  0000 C CNN
+F 2 "" H 7800 5700 50  0001 C CNN
+F 3 "" H 7800 5700 50  0001 C CNN
+	1    7800 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 5700 7150 5700
+Wire Wire Line
+	7150 5600 7150 5700
+Connection ~ 7150 5700
+Wire Wire Line
+	7150 5700 6900 5700
+Text GLabel 9000 4000 0    50   Input ~ 0
+Arduino_A0
+$Comp
+L Device:R R?
+U 1 1 5E9954EC
+P 9250 3750
+F 0 "R?" H 9320 3796 50  0000 L CNN
+F 1 "10k" H 9320 3705 50  0000 L CNN
+F 2 "" V 9180 3750 50  0001 C CNN
+F 3 "~" H 9250 3750 50  0001 C CNN
+	1    9250 3750
+	1    0    0    -1  
+$EndComp
+Text GLabel 9250 3600 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E9954F3
+P 9700 4000
+F 0 "SW?" H 9700 4285 50  0000 C CNN
+F 1 "SW_Push" H 9700 4194 50  0000 C CNN
+F 2 "" H 9700 4200 50  0001 C CNN
+F 3 "~" H 9700 4200 50  0001 C CNN
+	1    9700 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E9954F9
+P 9900 4000
+F 0 "#PWR?" H 9900 3750 50  0001 C CNN
+F 1 "GNDREF" H 9905 3827 50  0000 C CNN
+F 2 "" H 9900 4000 50  0001 C CNN
+F 3 "" H 9900 4000 50  0001 C CNN
+	1    9900 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4000 9250 4000
+Wire Wire Line
+	9250 3900 9250 4000
+Connection ~ 9250 4000
+Wire Wire Line
+	9250 4000 9000 4000
+Text GLabel 9000 4850 0    50   Input ~ 0
+Arduino_A1
+$Comp
+L Device:R R?
+U 1 1 5E997889
+P 9250 4600
+F 0 "R?" H 9320 4646 50  0000 L CNN
+F 1 "10k" H 9320 4555 50  0000 L CNN
+F 2 "" V 9180 4600 50  0001 C CNN
+F 3 "~" H 9250 4600 50  0001 C CNN
+	1    9250 4600
+	1    0    0    -1  
+$EndComp
+Text GLabel 9250 4450 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E997890
+P 9700 4850
+F 0 "SW?" H 9700 5135 50  0000 C CNN
+F 1 "SW_Push" H 9700 5044 50  0000 C CNN
+F 2 "" H 9700 5050 50  0001 C CNN
+F 3 "~" H 9700 5050 50  0001 C CNN
+	1    9700 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E997896
+P 9900 4850
+F 0 "#PWR?" H 9900 4600 50  0001 C CNN
+F 1 "GNDREF" H 9905 4677 50  0000 C CNN
+F 2 "" H 9900 4850 50  0001 C CNN
+F 3 "" H 9900 4850 50  0001 C CNN
+	1    9900 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4850 9250 4850
+Wire Wire Line
+	9250 4750 9250 4850
+Connection ~ 9250 4850
+Wire Wire Line
+	9250 4850 9000 4850
+Text GLabel 9000 5700 0    50   Input ~ 0
+Arduino_A2
+$Comp
+L Device:R R?
+U 1 1 5E9C2684
+P 9250 5450
+F 0 "R?" H 9320 5496 50  0000 L CNN
+F 1 "10k" H 9320 5405 50  0000 L CNN
+F 2 "" V 9180 5450 50  0001 C CNN
+F 3 "~" H 9250 5450 50  0001 C CNN
+	1    9250 5450
+	1    0    0    -1  
+$EndComp
+Text GLabel 9250 5300 1    50   Input ~ 0
++5V
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5E9C268B
+P 9700 5700
+F 0 "SW?" H 9700 5985 50  0000 C CNN
+F 1 "SW_Push" H 9700 5894 50  0000 C CNN
+F 2 "" H 9700 5900 50  0001 C CNN
+F 3 "~" H 9700 5900 50  0001 C CNN
+	1    9700 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5E9C2691
+P 9900 5700
+F 0 "#PWR?" H 9900 5450 50  0001 C CNN
+F 1 "GNDREF" H 9905 5527 50  0000 C CNN
+F 2 "" H 9900 5700 50  0001 C CNN
+F 3 "" H 9900 5700 50  0001 C CNN
+	1    9900 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 5700 9250 5700
+Wire Wire Line
+	9250 5600 9250 5700
+Connection ~ 9250 5700
+Wire Wire Line
+	9250 5700 9000 5700
+NoConn ~ 4350 4050
+Text GLabel 5350 3350 2    50   Output ~ 0
+Arduino_A0
+Text GLabel 5350 3450 2    50   Output ~ 0
+Arduino_A1
+Text GLabel 5350 3550 2    50   Output ~ 0
+Arduino_A2
+NoConn ~ 5350 3650
+NoConn ~ 5350 3750
+NoConn ~ 5350 3850
+NoConn ~ 4950 2350
+$EndSCHEMATC
