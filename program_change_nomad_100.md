@@ -21,6 +21,8 @@ With the formula applied, this is the list of all possible programs for Nomad 10
 6.  CH1    REV SOLO
 7.  CH1 EQ REV SOLO
 
+---
+
 10. CH2
 11. CH2 EQ
 12. CH2    REV
@@ -29,6 +31,8 @@ With the formula applied, this is the list of all possible programs for Nomad 10
 15. CH2 EQ     SOLO
 16. CH2    REV SOLO
 17. CH2 EQ REV SOLO
+
+---
 
 20. CH3
 21. CH3 EQ
