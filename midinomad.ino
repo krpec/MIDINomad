@@ -26,31 +26,37 @@
 #define VAL_REV  2
 #define VAL_SOLO 4
 
-
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-byte currentProgram =  0;
-byte currentChannel =  VAL_CH1;
+byte currentProgram =  10;
+byte currentChannel =  VAL_CH2;
 byte currentFunction = 0;
 
 byte lock; 
 
 void setChannel(int channel = 1) {
   currentChannel = channel;
-  //handle output change to set correct channel
-  //change the LEDs
+  //handle output change to set correct channel & change the LEDs
   switch (channel) {
     case VAL_CH1:
+			digitalWrite(REL1, HIGH);
+			digitalWrite(REL2, HIGH);
+			
       digitalWrite(LED_CH1, HIGH);
       digitalWrite(LED_CH2, LOW);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH2:
+			digitalWrite(REL1, LOW);
+			
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, HIGH);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH3:
+			digitalWrite(REL1, HIGH);
+			digitalWrite(REL2, LOW);
+			
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, LOW);
       digitalWrite(LED_CH3, HIGH);
@@ -61,11 +67,33 @@ void setChannel(int channel = 1) {
 void functionOn(int f) {
   currentFunction = currentFunction | f;
   //handle output change to turn the SOLO/REV/EQ on
+	switch (f) {
+	  case VAL_EQ:
+			digitalWrite(MESA_SWC, LOW);
+			break;
+		case VAL_REV:
+			digitalWrite(MESA_SWB, HIGH);
+			break;
+		case VAL_SOLO:
+			digitalWrite(MESA_SWA, LOW);
+			break;
+	}
 }
 
 void functionOff(int f) {
   currentFunction -= f;
   //handle output change to turn the SOLO/REV/EQ off
+	switch (f) {
+  	case VAL_EQ:
+			digitalWrite(MESA_SWC, HIGH);
+			break;
+	  case VAL_REV:
+			digitalWrite(MESA_SWB, LOW);
+			break;
+	  case VAL_SOLO:
+			digitalWrite(MESA_SWA, HIGH);
+			break;
+	}
 }
 
 void toggleFunction(int f) {
@@ -161,7 +189,9 @@ void setup() {
   functionOff(VAL_REV);
   functionOff(VAL_SOLO);
 
-  MIDI.begin(MIDI_CHANNEL);
+  MIDI.begin(MIDI_CHANNEL_OMNI);
+  MIDI.setInputChannel(MIDI_CHANNEL);
+  MIDI.turnThruOn(midi::Thru::DifferentChannel);
   MIDI.setHandleProgramChange(handleProgramChange);
 }
 

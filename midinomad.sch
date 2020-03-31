@@ -28,47 +28,47 @@ $EndComp
 $Comp
 L MCU_Module:Arduino_Nano_v3.x A1
 U 1 1 5E7CDAC3
-P 6150 3150
-F 0 "A1" H 6150 2061 50  0000 C CNN
-F 1 "Arduino_Nano_v3.x" H 6150 1970 50  0000 C CNN
-F 2 "Module:Arduino_Nano" H 6150 3150 50  0001 C CIN
-F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 6150 3150 50  0001 C CNN
-	1    6150 3150
+P 6550 5100
+F 0 "A1" H 6550 4011 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 6550 3920 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 6550 5100 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 6550 5100 50  0001 C CNN
+	1    6550 5100
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR05
 U 1 1 5E7F6EDF
-P 6150 4450
-F 0 "#PWR05" H 6150 4200 50  0001 C CNN
-F 1 "GNDREF" H 6155 4277 50  0000 C CNN
-F 2 "" H 6150 4450 50  0001 C CNN
-F 3 "" H 6150 4450 50  0001 C CNN
-	1    6150 4450
+P 6550 6400
+F 0 "#PWR05" H 6550 6150 50  0001 C CNN
+F 1 "GNDREF" H 6555 6227 50  0000 C CNN
+F 2 "" H 6550 6400 50  0001 C CNN
+F 3 "" H 6550 6400 50  0001 C CNN
+	1    6550 6400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6150 4150 6150 4200
+	6550 6100 6550 6150
 Wire Wire Line
-	6150 4200 6250 4200
+	6550 6150 6650 6150
 Wire Wire Line
-	6250 4200 6250 4150
-Connection ~ 6150 4200
+	6650 6150 6650 6100
+Connection ~ 6550 6150
 Wire Wire Line
-	6150 4200 6150 4450
-Text GLabel 6050 2150 1    50   Input ~ 0
+	6550 6150 6550 6400
+Text GLabel 6450 4100 1    50   Input ~ 0
 +5V
-Text GLabel 5050 2550 0    50   Input ~ 0
+Text GLabel 5450 4500 0    50   Input ~ 0
 Rx
-Text GLabel 5650 2950 0    50   Output ~ 0
+Text GLabel 6050 4900 0    50   Output ~ 0
 Arduino_D4
-Text GLabel 5650 3050 0    50   Output ~ 0
+Text GLabel 6050 5000 0    50   Output ~ 0
 Arduino_D5
-NoConn ~ 6650 3750
-NoConn ~ 6650 3850
-NoConn ~ 6650 2950
+NoConn ~ 7050 5700
+NoConn ~ 7050 5800
+NoConn ~ 7050 4900
 NoConn ~ 10100 1500
-Text GLabel 5650 3150 0    50   Output ~ 0
+Text GLabel 6050 5100 0    50   Output ~ 0
 Arduino_D6
 Text GLabel 1200 5400 0    50   Input ~ 0
 Arduino_D4
@@ -271,26 +271,26 @@ Text GLabel 7750 1100 0    50   Input ~ 0
 MESA_SWB_(REV)
 Text GLabel 8350 1100 2    50   Input ~ 0
 MESA_SWA_(SOLO)
-Text GLabel 5650 3250 0    50   Output ~ 0
+Text GLabel 6050 5200 0    50   Output ~ 0
 Arduino_D7
-Text GLabel 5650 2750 0    50   Output ~ 0
+Text GLabel 6050 4700 0    50   Output ~ 0
 Arduino_D2
-Text GLabel 5650 2850 0    50   Output ~ 0
+Text GLabel 6050 4800 0    50   Output ~ 0
 Arduino_D3
 $Comp
 L Device:Jumper JP1
 U 1 1 5E944A1A
-P 5350 2550
-F 0 "JP1" H 5350 2814 50  0000 C CNN
-F 1 "Jumper" H 5350 2723 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5350 2550 50  0001 C CNN
-F 3 "~" H 5350 2550 50  0001 C CNN
-	1    5350 2550
+P 5750 4500
+F 0 "JP1" H 5750 4764 50  0000 C CNN
+F 1 "Jumper" H 5750 4673 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5750 4500 50  0001 C CNN
+F 3 "~" H 5750 4500 50  0001 C CNN
+	1    5750 4500
 	1    0    0    -1  
 $EndComp
-Text GLabel 5650 3350 0    50   Output ~ 0
+Text GLabel 6050 5300 0    50   Output ~ 0
 Arduino_D8
-Text GLabel 5650 3450 0    50   Output ~ 0
+Text GLabel 6050 5400 0    50   Output ~ 0
 Arduino_D9
 Text GLabel 3800 5400 0    50   Input ~ 0
 Arduino_D7
@@ -478,289 +478,289 @@ F 3 "" H 3950 7350 50  0001 C CNN
 	1    3950 7350
 	1    0    0    -1  
 $EndComp
-Text GLabel 5650 3550 0    50   Output ~ 0
+Text GLabel 6050 5500 0    50   Output ~ 0
 Arduino_D10
-Text GLabel 5650 3650 0    50   Output ~ 0
+Text GLabel 6050 5600 0    50   Output ~ 0
 Arduino_D11
-Text GLabel 5650 3750 0    50   Output ~ 0
+Text GLabel 6050 5700 0    50   Output ~ 0
 Arduino_D12
-Text GLabel 8450 4600 0    50   Input ~ 0
+Text GLabel 8450 4550 0    50   Input ~ 0
 Arduino_D10
 $Comp
 L Device:R R19
 U 1 1 5E9865DF
-P 8700 4350
-F 0 "R19" H 8770 4396 50  0000 L CNN
-F 1 "10k" H 8770 4305 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 4350 50  0001 C CNN
-F 3 "~" H 8700 4350 50  0001 C CNN
-	1    8700 4350
+P 8700 4300
+F 0 "R19" H 8770 4346 50  0000 L CNN
+F 1 "10k" H 8770 4255 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 4300 50  0001 C CNN
+F 3 "~" H 8700 4300 50  0001 C CNN
+	1    8700 4300
 	1    0    0    -1  
 $EndComp
-Text GLabel 8700 4200 1    50   Input ~ 0
+Text GLabel 8700 4150 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5E9875B6
-P 9150 4600
-F 0 "SW1" H 9150 4885 50  0000 C CNN
-F 1 "SW_Push" H 9150 4794 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 4800 50  0001 C CNN
-F 3 "~" H 9150 4800 50  0001 C CNN
-	1    9150 4600
+P 9150 4550
+F 0 "SW1" H 9150 4835 50  0000 C CNN
+F 1 "SW_Push" H 9150 4744 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 4750 50  0001 C CNN
+F 3 "~" H 9150 4750 50  0001 C CNN
+	1    9150 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR012
 U 1 1 5E98CB37
-P 9350 4600
-F 0 "#PWR012" H 9350 4350 50  0001 C CNN
-F 1 "GNDREF" H 9355 4427 50  0000 C CNN
-F 2 "" H 9350 4600 50  0001 C CNN
-F 3 "" H 9350 4600 50  0001 C CNN
-	1    9350 4600
+P 9350 4550
+F 0 "#PWR012" H 9350 4300 50  0001 C CNN
+F 1 "GNDREF" H 9355 4377 50  0000 C CNN
+F 2 "" H 9350 4550 50  0001 C CNN
+F 3 "" H 9350 4550 50  0001 C CNN
+	1    9350 4550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8950 4600 8700 4600
+	8950 4550 8700 4550
 Wire Wire Line
-	8700 4500 8700 4600
-Connection ~ 8700 4600
+	8700 4450 8700 4550
+Connection ~ 8700 4550
 Wire Wire Line
-	8700 4600 8450 4600
-Text GLabel 8450 5450 0    50   Input ~ 0
+	8700 4550 8450 4550
+Text GLabel 8450 5400 0    50   Input ~ 0
 Arduino_D11
 $Comp
 L Device:R R20
 U 1 1 5E991B78
-P 8700 5200
-F 0 "R20" H 8770 5246 50  0000 L CNN
-F 1 "10k" H 8770 5155 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 5200 50  0001 C CNN
-F 3 "~" H 8700 5200 50  0001 C CNN
-	1    8700 5200
+P 8700 5150
+F 0 "R20" H 8770 5196 50  0000 L CNN
+F 1 "10k" H 8770 5105 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 5150 50  0001 C CNN
+F 3 "~" H 8700 5150 50  0001 C CNN
+	1    8700 5150
 	1    0    0    -1  
 $EndComp
-Text GLabel 8700 5050 1    50   Input ~ 0
+Text GLabel 8700 5000 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW2
 U 1 1 5E991B7F
-P 9150 5450
-F 0 "SW2" H 9150 5735 50  0000 C CNN
-F 1 "SW_Push" H 9150 5644 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 5650 50  0001 C CNN
-F 3 "~" H 9150 5650 50  0001 C CNN
-	1    9150 5450
+P 9150 5400
+F 0 "SW2" H 9150 5685 50  0000 C CNN
+F 1 "SW_Push" H 9150 5594 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 5600 50  0001 C CNN
+F 3 "~" H 9150 5600 50  0001 C CNN
+	1    9150 5400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR013
 U 1 1 5E991B85
-P 9350 5450
-F 0 "#PWR013" H 9350 5200 50  0001 C CNN
-F 1 "GNDREF" H 9355 5277 50  0000 C CNN
-F 2 "" H 9350 5450 50  0001 C CNN
-F 3 "" H 9350 5450 50  0001 C CNN
-	1    9350 5450
+P 9350 5400
+F 0 "#PWR013" H 9350 5150 50  0001 C CNN
+F 1 "GNDREF" H 9355 5227 50  0000 C CNN
+F 2 "" H 9350 5400 50  0001 C CNN
+F 3 "" H 9350 5400 50  0001 C CNN
+	1    9350 5400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8950 5450 8700 5450
+	8950 5400 8700 5400
 Wire Wire Line
-	8700 5350 8700 5450
-Connection ~ 8700 5450
+	8700 5300 8700 5400
+Connection ~ 8700 5400
 Wire Wire Line
-	8700 5450 8450 5450
-Text GLabel 8450 6300 0    50   Input ~ 0
+	8700 5400 8450 5400
+Text GLabel 8450 6250 0    50   Input ~ 0
 Arduino_D12
 $Comp
 L Device:R R21
 U 1 1 5E993A8A
-P 8700 6050
-F 0 "R21" H 8770 6096 50  0000 L CNN
-F 1 "10k" H 8770 6005 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 6050 50  0001 C CNN
-F 3 "~" H 8700 6050 50  0001 C CNN
-	1    8700 6050
+P 8700 6000
+F 0 "R21" H 8770 6046 50  0000 L CNN
+F 1 "10k" H 8770 5955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8630 6000 50  0001 C CNN
+F 3 "~" H 8700 6000 50  0001 C CNN
+	1    8700 6000
 	1    0    0    -1  
 $EndComp
-Text GLabel 8700 5900 1    50   Input ~ 0
+Text GLabel 8700 5850 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW3
 U 1 1 5E993A91
-P 9150 6300
-F 0 "SW3" H 9150 6585 50  0000 C CNN
-F 1 "SW_Push" H 9150 6494 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 6500 50  0001 C CNN
-F 3 "~" H 9150 6500 50  0001 C CNN
-	1    9150 6300
+P 9150 6250
+F 0 "SW3" H 9150 6535 50  0000 C CNN
+F 1 "SW_Push" H 9150 6444 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9150 6450 50  0001 C CNN
+F 3 "~" H 9150 6450 50  0001 C CNN
+	1    9150 6250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR014
 U 1 1 5E993A97
-P 9350 6300
-F 0 "#PWR014" H 9350 6050 50  0001 C CNN
-F 1 "GNDREF" H 9355 6127 50  0000 C CNN
-F 2 "" H 9350 6300 50  0001 C CNN
-F 3 "" H 9350 6300 50  0001 C CNN
-	1    9350 6300
+P 9350 6250
+F 0 "#PWR014" H 9350 6000 50  0001 C CNN
+F 1 "GNDREF" H 9355 6077 50  0000 C CNN
+F 2 "" H 9350 6250 50  0001 C CNN
+F 3 "" H 9350 6250 50  0001 C CNN
+	1    9350 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8950 6300 8700 6300
+	8950 6250 8700 6250
 Wire Wire Line
-	8700 6200 8700 6300
-Connection ~ 8700 6300
+	8700 6150 8700 6250
+Connection ~ 8700 6250
 Wire Wire Line
-	8700 6300 8450 6300
-Text GLabel 10050 4600 0    50   Input ~ 0
+	8700 6250 8450 6250
+Text GLabel 10050 4550 0    50   Input ~ 0
 Arduino_A0
 $Comp
 L Device:R R22
 U 1 1 5E9954EC
-P 10300 4350
-F 0 "R22" H 10370 4396 50  0000 L CNN
-F 1 "10k" H 10370 4305 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 4350 50  0001 C CNN
-F 3 "~" H 10300 4350 50  0001 C CNN
-	1    10300 4350
+P 10300 4300
+F 0 "R22" H 10370 4346 50  0000 L CNN
+F 1 "10k" H 10370 4255 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 4300 50  0001 C CNN
+F 3 "~" H 10300 4300 50  0001 C CNN
+	1    10300 4300
 	1    0    0    -1  
 $EndComp
-Text GLabel 10300 4200 1    50   Input ~ 0
+Text GLabel 10300 4150 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW4
 U 1 1 5E9954F3
-P 10750 4600
-F 0 "SW4" H 10750 4885 50  0000 C CNN
-F 1 "SW_Push" H 10750 4794 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 4800 50  0001 C CNN
-F 3 "~" H 10750 4800 50  0001 C CNN
-	1    10750 4600
+P 10750 4550
+F 0 "SW4" H 10750 4835 50  0000 C CNN
+F 1 "SW_Push" H 10750 4744 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 4750 50  0001 C CNN
+F 3 "~" H 10750 4750 50  0001 C CNN
+	1    10750 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR015
 U 1 1 5E9954F9
-P 10950 4600
-F 0 "#PWR015" H 10950 4350 50  0001 C CNN
-F 1 "GNDREF" H 10955 4427 50  0000 C CNN
-F 2 "" H 10950 4600 50  0001 C CNN
-F 3 "" H 10950 4600 50  0001 C CNN
-	1    10950 4600
+P 10950 4550
+F 0 "#PWR015" H 10950 4300 50  0001 C CNN
+F 1 "GNDREF" H 10955 4377 50  0000 C CNN
+F 2 "" H 10950 4550 50  0001 C CNN
+F 3 "" H 10950 4550 50  0001 C CNN
+	1    10950 4550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10550 4600 10300 4600
+	10550 4550 10300 4550
 Wire Wire Line
-	10300 4500 10300 4600
-Connection ~ 10300 4600
+	10300 4450 10300 4550
+Connection ~ 10300 4550
 Wire Wire Line
-	10300 4600 10050 4600
-Text GLabel 10050 5450 0    50   Input ~ 0
+	10300 4550 10050 4550
+Text GLabel 10050 5400 0    50   Input ~ 0
 Arduino_A1
 $Comp
 L Device:R R23
 U 1 1 5E997889
-P 10300 5200
-F 0 "R23" H 10370 5246 50  0000 L CNN
-F 1 "10k" H 10370 5155 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 5200 50  0001 C CNN
-F 3 "~" H 10300 5200 50  0001 C CNN
-	1    10300 5200
+P 10300 5150
+F 0 "R23" H 10370 5196 50  0000 L CNN
+F 1 "10k" H 10370 5105 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 5150 50  0001 C CNN
+F 3 "~" H 10300 5150 50  0001 C CNN
+	1    10300 5150
 	1    0    0    -1  
 $EndComp
-Text GLabel 10300 5050 1    50   Input ~ 0
+Text GLabel 10300 5000 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW5
 U 1 1 5E997890
-P 10750 5450
-F 0 "SW5" H 10750 5735 50  0000 C CNN
-F 1 "SW_Push" H 10750 5644 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 5650 50  0001 C CNN
-F 3 "~" H 10750 5650 50  0001 C CNN
-	1    10750 5450
+P 10750 5400
+F 0 "SW5" H 10750 5685 50  0000 C CNN
+F 1 "SW_Push" H 10750 5594 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 5600 50  0001 C CNN
+F 3 "~" H 10750 5600 50  0001 C CNN
+	1    10750 5400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR016
 U 1 1 5E997896
-P 10950 5450
-F 0 "#PWR016" H 10950 5200 50  0001 C CNN
-F 1 "GNDREF" H 10955 5277 50  0000 C CNN
-F 2 "" H 10950 5450 50  0001 C CNN
-F 3 "" H 10950 5450 50  0001 C CNN
-	1    10950 5450
+P 10950 5400
+F 0 "#PWR016" H 10950 5150 50  0001 C CNN
+F 1 "GNDREF" H 10955 5227 50  0000 C CNN
+F 2 "" H 10950 5400 50  0001 C CNN
+F 3 "" H 10950 5400 50  0001 C CNN
+	1    10950 5400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10550 5450 10300 5450
+	10550 5400 10300 5400
 Wire Wire Line
-	10300 5350 10300 5450
-Connection ~ 10300 5450
+	10300 5300 10300 5400
+Connection ~ 10300 5400
 Wire Wire Line
-	10300 5450 10050 5450
-Text GLabel 10050 6300 0    50   Input ~ 0
+	10300 5400 10050 5400
+Text GLabel 10050 6250 0    50   Input ~ 0
 Arduino_A2
 $Comp
 L Device:R R24
 U 1 1 5E9C2684
-P 10300 6050
-F 0 "R24" H 10370 6096 50  0000 L CNN
-F 1 "10k" H 10370 6005 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 6050 50  0001 C CNN
-F 3 "~" H 10300 6050 50  0001 C CNN
-	1    10300 6050
+P 10300 6000
+F 0 "R24" H 10370 6046 50  0000 L CNN
+F 1 "10k" H 10370 5955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10230 6000 50  0001 C CNN
+F 3 "~" H 10300 6000 50  0001 C CNN
+	1    10300 6000
 	1    0    0    -1  
 $EndComp
-Text GLabel 10300 5900 1    50   Input ~ 0
+Text GLabel 10300 5850 1    50   Input ~ 0
 +5V
 $Comp
 L Switch:SW_Push SW6
 U 1 1 5E9C268B
-P 10750 6300
-F 0 "SW6" H 10750 6585 50  0000 C CNN
-F 1 "SW_Push" H 10750 6494 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 6500 50  0001 C CNN
-F 3 "~" H 10750 6500 50  0001 C CNN
-	1    10750 6300
+P 10750 6250
+F 0 "SW6" H 10750 6535 50  0000 C CNN
+F 1 "SW_Push" H 10750 6444 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 10750 6450 50  0001 C CNN
+F 3 "~" H 10750 6450 50  0001 C CNN
+	1    10750 6250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDREF #PWR017
 U 1 1 5E9C2691
-P 10950 6300
-F 0 "#PWR017" H 10950 6050 50  0001 C CNN
-F 1 "GNDREF" H 10955 6127 50  0000 C CNN
-F 2 "" H 10950 6300 50  0001 C CNN
-F 3 "" H 10950 6300 50  0001 C CNN
-	1    10950 6300
+P 10950 6250
+F 0 "#PWR017" H 10950 6000 50  0001 C CNN
+F 1 "GNDREF" H 10955 6077 50  0000 C CNN
+F 2 "" H 10950 6250 50  0001 C CNN
+F 3 "" H 10950 6250 50  0001 C CNN
+	1    10950 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10550 6300 10300 6300
+	10550 6250 10300 6250
 Wire Wire Line
-	10300 6200 10300 6300
-Connection ~ 10300 6300
+	10300 6150 10300 6250
+Connection ~ 10300 6250
 Wire Wire Line
-	10300 6300 10050 6300
-Text GLabel 6650 3150 2    50   Output ~ 0
+	10300 6250 10050 6250
+Text GLabel 7050 5100 2    50   Output ~ 0
 Arduino_A0
-Text GLabel 6650 3250 2    50   Output ~ 0
+Text GLabel 7050 5200 2    50   Output ~ 0
 Arduino_A1
-Text GLabel 6650 3350 2    50   Output ~ 0
+Text GLabel 7050 5300 2    50   Output ~ 0
 Arduino_A2
-NoConn ~ 6650 3450
-NoConn ~ 6650 3550
-NoConn ~ 6650 3650
-NoConn ~ 6250 2150
-Text GLabel 9200 2600 2    50   Input ~ 0
+NoConn ~ 7050 5400
+NoConn ~ 7050 5500
+NoConn ~ 7050 5600
+NoConn ~ 6650 4100
+Text GLabel 9200 2300 2    50   Input ~ 0
 Arduino_D2
-Text GLabel 9200 2700 2    50   Input ~ 0
+Text GLabel 9200 2400 2    50   Input ~ 0
 Arduino_D3
 Text GLabel 9800 1300 0    50   Input ~ 0
 MESA_SWC_(EQ)
@@ -814,47 +814,25 @@ Text GLabel 10400 3650 3    50   Input ~ 0
 -3V
 Text GLabel 9200 2800 2    50   Output ~ 0
 MESA_VCH
-NoConn ~ 5650 3850
-Text GLabel 9200 2500 2    50   Input ~ 0
+NoConn ~ 6050 5800
+Text GLabel 9200 2200 2    50   Input ~ 0
 +5V
 $Comp
 L power:GNDREF #PWR0101
 U 1 1 5EA2C615
-P 9200 3400
-F 0 "#PWR0101" H 9200 3150 50  0001 C CNN
-F 1 "GNDREF" H 9205 3227 50  0000 C CNN
-F 2 "" H 9200 3400 50  0001 C CNN
-F 3 "" H 9200 3400 50  0001 C CNN
-	1    9200 3400
+P 9200 2500
+F 0 "#PWR0101" H 9200 2250 50  0001 C CNN
+F 1 "GNDREF" H 9205 2327 50  0000 C CNN
+F 2 "" H 9200 2500 50  0001 C CNN
+F 3 "" H 9200 2500 50  0001 C CNN
+	1    9200 2500
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x10_Male J6
-U 1 1 5EA9C505
-P 9000 2900
-F 0 "J6" H 9108 3481 50  0000 C CNN
-F 1 "Conn_01x10_Male" H 9108 3390 50  0000 C CNN
-F 2 "" H 9000 2900 50  0001 C CNN
-F 3 "~" H 9000 2900 50  0001 C CNN
-	1    9000 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x10_Female J5
-U 1 1 5EAA7DCD
-P 8850 2900
-F 0 "J5" H 8878 2876 50  0000 L CNN
-F 1 "Conn_01x10_Female" H 8878 2785 50  0000 L CNN
-F 2 "" H 8850 2900 50  0001 C CNN
-F 3 "~" H 8850 2900 50  0001 C CNN
-	1    8850 2900
-	1    0    0    -1  
-$EndComp
-Text GLabel 8650 2500 0    50   Output ~ 0
+Text GLabel 8650 2200 0    50   Output ~ 0
 Relay_Ucc
-Text GLabel 8650 2600 0    50   Output ~ 0
+Text GLabel 8650 2300 0    50   Output ~ 0
 Relay_In1
-Text GLabel 8650 2700 0    50   Output ~ 0
+Text GLabel 8650 2400 0    50   Output ~ 0
 Relay_In2
 Text GLabel 8650 2800 0    50   Input ~ 0
 Relay_COM1
@@ -868,7 +846,7 @@ Text GLabel 8650 3200 0    50   Input ~ 0
 Relay_NC2
 Text GLabel 8650 3300 0    50   Input ~ 0
 Relay_NO2
-Text GLabel 8650 3400 0    50   Output ~ 0
+Text GLabel 8650 2500 0    50   Output ~ 0
 Relay_GND
 Wire Wire Line
 	10400 3650 10400 3600
@@ -912,7 +890,7 @@ U 1 1 5EB50DB8
 P 2450 3500
 F 0 "U2" H 2450 3742 50  0000 C CNN
 F 1 "L7805" H 2450 3651 50  0000 C CNN
-F 2 "" H 2475 3350 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 2475 3350 50  0001 L CIN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 2450 3450 50  0001 C CNN
 	1    2450 3500
 	1    0    0    -1  
@@ -985,17 +963,17 @@ F 3 "" H 2450 4000 50  0001 C CNN
 	1    2450 4000
 	1    0    0    -1  
 $EndComp
-Text GLabel 5050 2650 0    50   Output ~ 0
+Text GLabel 5450 4600 0    50   Output ~ 0
 Tx
 $Comp
 L Device:Jumper JP2
 U 1 1 5EC41C41
-P 5350 2650
-F 0 "JP2" H 5350 2914 50  0000 C CNN
-F 1 "Jumper" H 5350 2823 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5350 2650 50  0001 C CNN
-F 3 "~" H 5350 2650 50  0001 C CNN
-	1    5350 2650
+P 5750 4600
+F 0 "JP2" H 5750 4864 50  0000 C CNN
+F 1 "Jumper" H 5750 4773 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5750 4600 50  0001 C CNN
+F 3 "~" H 5750 4600 50  0001 C CNN
+	1    5750 4600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1203,4 +1181,173 @@ Wire Notes Line
 	11150 1900 11150 550 
 Wire Notes Line
 	11150 550  7050 550 
+$Comp
+L Device:R R26
+U 1 1 5E8C2E42
+P 5850 1450
+F 0 "R26" V 5643 1450 50  0001 C CNN
+F 1 "9k1" V 5734 1450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5780 1450 50  0001 C CNN
+F 3 "~" H 5850 1450 50  0001 C CNN
+	1    5850 1450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R27
+U 1 1 5E8C2E48
+P 5850 2100
+F 0 "R27" H 5780 2054 50  0001 R CNN
+F 1 "5k6" H 5780 2145 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5780 2100 50  0001 C CNN
+F 3 "~" H 5850 2100 50  0001 C CNN
+	1    5850 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 5E8C2E4E
+P 6250 2100
+F 0 "R28" H 6180 2054 50  0001 R CNN
+F 1 "2k7" H 6180 2145 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6180 2100 50  0001 C CNN
+F 3 "~" H 6250 2100 50  0001 C CNN
+	1    6250 2100
+	-1   0    0    1   
+$EndComp
+Text GLabel 5850 1300 1    50   Input ~ 0
++2V
+Text GLabel 5850 3050 3    50   Input ~ 0
+-3V
+Wire Wire Line
+	5850 1600 5850 1850
+Wire Wire Line
+	6250 1950 6250 1850
+Wire Wire Line
+	6250 1850 5850 1850
+Connection ~ 5850 1850
+Wire Wire Line
+	5850 1850 5850 1950
+Wire Wire Line
+	6250 2400 6250 2250
+$Comp
+L Switch:SW_SPDT Relay1
+U 1 1 5E8C957B
+P 5300 1750
+F 0 "Relay1" H 5300 1943 50  0000 C CNN
+F 1 "SW_SPDT" H 5300 1944 50  0001 C CNN
+F 2 "" H 5300 1750 50  0001 C CNN
+F 3 "~" H 5300 1750 50  0001 C CNN
+	1    5300 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPDT Relay2
+U 1 1 5E8D2845
+P 6150 2600
+F 0 "Relay2" V 6150 2412 50  0000 R CNN
+F 1 "SW_SPDT" V 6105 2412 50  0001 R CNN
+F 2 "" H 6150 2600 50  0001 C CNN
+F 3 "~" H 6150 2600 50  0001 C CNN
+	1    6150 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5500 1850 5850 1850
+Wire Wire Line
+	5850 2250 5850 2850
+Wire Wire Line
+	6150 2800 6150 2850
+Wire Wire Line
+	6150 2850 5850 2850
+Connection ~ 5850 2850
+Wire Wire Line
+	5850 2850 5850 3050
+Text GLabel 5100 1750 0    50   Output ~ 0
+MESA_VCH
+Wire Notes Line
+	4700 3300 6700 3300
+Wire Notes Line
+	6700 3300 6700 1050
+Wire Notes Line
+	6700 1050 4700 1050
+Wire Notes Line
+	4700 1050 4700 3300
+Wire Notes Line
+	8050 3900 11150 3900
+Wire Notes Line
+	11150 3900 11150 1950
+Wire Notes Line
+	11150 1950 8050 1950
+Wire Notes Line
+	8050 1950 8050 3900
+Wire Notes Line
+	6700 2350 8050 2350
+Wire Notes Line
+	3300 5000 3300 7700
+Wire Notes Line
+	3300 7700 5000 7700
+Wire Notes Line
+	5000 7700 5000 5000
+Wire Notes Line
+	5000 5000 3300 5000
+Wire Notes Line
+	11150 3950 7900 3950
+Wire Notes Line
+	7900 3950 7900 6500
+Wire Notes Line
+	7900 6500 11150 6500
+Wire Notes Line
+	11150 6500 11150 3950
+Wire Notes Line
+	550  4350 550  7700
+Wire Notes Line
+	550  7700 3050 7700
+Wire Notes Line
+	3050 7700 3050 4350
+Wire Notes Line
+	550  4350 3050 4350
+$Comp
+L Connector:Conn_01x04_Male J8
+U 1 1 5E9555CC
+P 9000 2300
+F 0 "J8" H 9108 2581 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 9108 2490 50  0000 C CNN
+F 2 "" H 9000 2300 50  0001 C CNN
+F 3 "~" H 9000 2300 50  0001 C CNN
+	1    9000 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Female J5
+U 1 1 5E9560F1
+P 8850 2300
+F 0 "J5" H 8878 2276 50  0000 L CNN
+F 1 "Conn_01x04_Female" H 8878 2185 50  0000 L CNN
+F 2 "" H 8850 2300 50  0001 C CNN
+F 3 "~" H 8850 2300 50  0001 C CNN
+	1    8850 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J6
+U 1 1 5E97E67B
+P 8850 3000
+F 0 "J6" H 8878 2976 50  0000 L CNN
+F 1 "Conn_01x06_Female" H 8878 2885 50  0000 L CNN
+F 2 "" H 8850 3000 50  0001 C CNN
+F 3 "~" H 8850 3000 50  0001 C CNN
+	1    8850 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Male J9
+U 1 1 5E97F186
+P 9000 3000
+F 0 "J9" H 9108 3381 50  0000 C CNN
+F 1 "Conn_01x06_Male" H 9108 3290 50  0000 C CNN
+F 2 "" H 9000 3000 50  0001 C CNN
+F 3 "~" H 9000 3000 50  0001 C CNN
+	1    9000 3000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
