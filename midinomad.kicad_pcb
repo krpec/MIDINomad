@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 18)
+    (drawings 19)
     (tracks 477)
     (zones 0)
     (modules 56)
@@ -11,7 +11,12 @@
 
   (page A4)
   (title_block
+    (title "MIDI Nomad")
     (date 2020-04-05)
+    (rev 3)
+    (company "krpec - dittrich.r@gmail.com")
+    (comment 1 Untested.)
+    (comment 4 "Schematics partially inspired by HappySwitch - happyswitch.it")
   )
 
   (layers
@@ -3031,7 +3036,10 @@
     )
   )
 
-  (gr_text "designed by krpec" (at 219.329 158.78175) (layer F.SilkS)
+  (gr_text "MIDI Nomad footswitch board, rev. 3" (at 212.598 158.65475) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text "designed by krpec" (at 78.613 158.65475) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (gr_text MIDI (at 214.884 102.77475) (layer F.SilkS)
