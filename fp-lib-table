@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name midinomad)(type KiCad)(uri ${KIPRJMOD}/midinomad.pretty)(options "")(descr ""))
+  (lib (name midinomad-bl)(type KiCad)(uri /home/krpec/dev/hw/midinomad)(options "")(descr ""))
+)
