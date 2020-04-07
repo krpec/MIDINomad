@@ -1,5 +1,7 @@
 #include <MIDI.h>
 
+#define DEBUG 1
+
 #define MIDI_CHANNEL 1
 
 #define REL1 2
@@ -39,24 +41,25 @@ void setChannel(int channel = 1) {
   //handle output change to set correct channel & change the LEDs
   switch (channel) {
     case VAL_CH1:
-			digitalWrite(REL1, HIGH);
-			digitalWrite(REL2, HIGH);
-			
+      //digitalWrite(REL1, HIGH);
+      //digitalWrite(REL2, HIGH);
+      
       digitalWrite(LED_CH1, HIGH);
       digitalWrite(LED_CH2, LOW);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH2:
-			digitalWrite(REL1, LOW);
-			
+      //digitalWrite(REL1, LOW);
+      //digitalWrite(REL2, LOW);
+      
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, HIGH);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH3:
-			digitalWrite(REL1, HIGH);
-			digitalWrite(REL2, LOW);
-			
+      //digitalWrite(REL1, HIGH);
+      //digitalWrite(REL2, LOW);
+      
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, LOW);
       digitalWrite(LED_CH3, HIGH);
@@ -67,33 +70,33 @@ void setChannel(int channel = 1) {
 void functionOn(int f) {
   currentFunction = currentFunction | f;
   //handle output change to turn the SOLO/REV/EQ on
-	switch (f) {
-	  case VAL_EQ:
-			digitalWrite(MESA_SWC, LOW);
-			break;
-		case VAL_REV:
-			digitalWrite(MESA_SWB, HIGH);
-			break;
-		case VAL_SOLO:
-			digitalWrite(MESA_SWA, LOW);
-			break;
-	}
+  switch (f) {
+    case VAL_EQ:
+      digitalWrite(MESA_SWC, LOW);
+      break;
+    case VAL_REV:
+      digitalWrite(MESA_SWB, HIGH);
+      break;
+    case VAL_SOLO:
+      digitalWrite(MESA_SWA, LOW);
+      break;
+  }
 }
 
 void functionOff(int f) {
   currentFunction -= f;
   //handle output change to turn the SOLO/REV/EQ off
-	switch (f) {
-  	case VAL_EQ:
-			digitalWrite(MESA_SWC, HIGH);
-			break;
-	  case VAL_REV:
-			digitalWrite(MESA_SWB, LOW);
-			break;
-	  case VAL_SOLO:
-			digitalWrite(MESA_SWA, HIGH);
-			break;
-	}
+  switch (f) {
+    case VAL_EQ:
+      digitalWrite(MESA_SWC, HIGH);
+      break;
+    case VAL_REV:
+      digitalWrite(MESA_SWB, LOW);
+      break;
+    case VAL_SOLO:
+      digitalWrite(MESA_SWA, HIGH);
+      break;
+  }
 }
 
 void toggleFunction(int f) {
@@ -106,7 +109,7 @@ void toggleFunction(int f) {
 }
 
 void changeProgram(byte num) {
-    if (num <= VAL_CH2) {
+    if (num < VAL_CH2) {
       //change channel to CH1  
       setChannel(VAL_CH1);
     }
@@ -152,19 +155,31 @@ void waitUntilButtonReleased() {
   }
 }
 
-void handleProgramChange(byte channel, byte number) {
+void handleProgramChange(byte channel, byte number) {  
   if (channel == MIDI_CHANNEL) {
+#ifdef DEBUG
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(50);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(50);
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(100);
+  digitalWrite(LED_BUILTIN, LOW);
+#endif
     changeProgram(number);
   }
 }
 
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+#ifndef DEBUG
   pinMode(REL1, OUTPUT);
   pinMode(REL2, OUTPUT);
   pinMode(MESA_SWA, OUTPUT);
   pinMode(MESA_SWB, OUTPUT);
   pinMode(MESA_SWC, OUTPUT);
-  
+#endif
+
   pinMode(LED_CH1, OUTPUT);
   pinMode(LED_CH2, OUTPUT);
   pinMode(LED_CH3, OUTPUT);
@@ -172,10 +187,11 @@ void setup() {
   pinMode(SW_CH1, INPUT);
   pinMode(SW_CH2, INPUT);
   pinMode(SW_CH3, INPUT);
+#ifndef DEBUG
   pinMode(SW_EQ, INPUT);
   pinMode(SW_REV, INPUT);
   pinMode(SW_SOLO, INPUT);
-  
+
   byte led;
   for (led = LED_CH1; led <= LED_CH3; led++) {
     digitalWrite(led, HIGH);
@@ -183,12 +199,13 @@ void setup() {
     digitalWrite(led, LOW);
   }
   
-  //defaults: CH1, SOLO & EQ & REV off
-  setChannel(1);
+  //defaults: CH2, SOLO & EQ & REV off
+ 
   functionOff(VAL_EQ);
   functionOff(VAL_REV);
   functionOff(VAL_SOLO);
-
+#endif
+  setChannel(VAL_CH2);
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.setInputChannel(MIDI_CHANNEL);
   MIDI.turnThruOn(midi::Thru::DifferentChannel);
@@ -220,6 +237,7 @@ void loop() {
       lock = SW_CH3;
     }
   }
+#ifndef DEBUG
   else if (!digitalRead(SW_EQ)) {
     if (currentFunction & VAL_EQ == VAL_EQ) {
       btnConfig -= VAL_EQ;
@@ -250,13 +268,14 @@ void loop() {
 
     lock = SW_SOLO;
   }
+#endif
 
   waitUntilButtonReleased();
   
   if (btnConfig != currentProgram) {
     changeProgram(btnConfig);
   }
-  
+
   //MIDI read here..
   MIDI.read();
 }

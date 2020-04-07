@@ -12,8 +12,8 @@
   (page A4)
   (title_block
     (title "MIDI Nomad")
-    (date 2020-04-05)
-    (rev 3)
+    (date 2020-04-06)
+    (rev 4)
     (company "krpec - dittrich.r@gmail.com")
     (comment 1 Untested.)
     (comment 4 "Schematics partially inspired by HappySwitch - happyswitch.it")
@@ -3036,7 +3036,7 @@
     )
   )
 
-  (gr_text "MIDI Nomad footswitch board, rev. 3" (at 212.598 158.65475) (layer F.SilkS)
+  (gr_text "MIDI Nomad footswitch board, rev. 4" (at 212.598 158.65475) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (gr_text "designed by krpec" (at 78.613 158.65475) (layer F.SilkS)
