@@ -78,13 +78,13 @@ void functionOn(int f) {
   //handle output change to turn the SOLO/REV/EQ on
 	switch (f) {
 	  case VAL_EQ:
-			digitalWrite(MESA_SWC, LOW);
+			digitalWrite(MESA_SWC, HIGH);
 			break;
 		case VAL_REV:
-			digitalWrite(MESA_SWB, LOW);
+			digitalWrite(MESA_SWB, HIGH);
 			break;
 		case VAL_SOLO:
-			digitalWrite(MESA_SWA, LOW);
+			digitalWrite(MESA_SWA, HIGH);
 			break;
 	}
 }
@@ -94,15 +94,15 @@ void functionOff(int f) {
 	switch (f) {
   	case VAL_EQ:
       currentProgram &= MASK_EQ_OFF;
-			digitalWrite(MESA_SWC, HIGH);
+			digitalWrite(MESA_SWC, LOW);
 			break;
 	  case VAL_REV:
       currentProgram &= MASK_REV_OFF;
-			digitalWrite(MESA_SWB, HIGH);
+			digitalWrite(MESA_SWB, LOW);
 			break;
 	  case VAL_SOLO:
       currentProgram &= MASK_SOLO_OFF;
-			digitalWrite(MESA_SWA, HIGH);
+			digitalWrite(MESA_SWA, LOW);
 			break;
 	}
 }
