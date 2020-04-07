@@ -19,23 +19,31 @@
 #define SW_REV  15
 #define SW_EQ   16
 
-#define VAL_CH1  0
-#define VAL_CH2  10
-#define VAL_CH3  20
+#define MIDI_VAL_CH1  0
+#define MIDI_VAL_CH2  10
+#define MIDI_VAL_CH3  20
+#define VAL_CH1  16
+#define VAL_CH2  32
+#define VAL_CH3  64
 #define VAL_EQ   1
 #define VAL_REV  2
 #define VAL_SOLO 4
 
+#define MASK_PRESERVE_CHANNELS 0B01110000
+#define MASK_OMMIT_CHANNELS    0B00000111
+#define MASK_EQ_OFF            0B01110110
+#define MASK_REV_OFF           0B01110101
+#define MASK_SOLO_OFF          0B01110011
+
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-byte currentProgram =  10;
-byte currentChannel =  VAL_CH2;
-byte currentFunction = 0;
-
+byte currentProgram =  VAL_CH2;
 byte lock; 
 
-void setChannel(int channel = 1) {
-  currentChannel = channel;
+void setChannel(int channel = VAL_CH2) {
+  currentProgram &= MASK_OMMIT_CHANNELS;
+  currentProgram |= channel;
+  
   //handle output change to set correct channel & change the LEDs
   switch (channel) {
     case VAL_CH1:
@@ -65,14 +73,14 @@ void setChannel(int channel = 1) {
 }
 
 void functionOn(int f) {
-  currentFunction = currentFunction | f;
+  currentProgram |= f;
   //handle output change to turn the SOLO/REV/EQ on
 	switch (f) {
 	  case VAL_EQ:
 			digitalWrite(MESA_SWC, LOW);
 			break;
 		case VAL_REV:
-			digitalWrite(MESA_SWB, HIGH);
+			digitalWrite(MESA_SWB, LOW);
 			break;
 		case VAL_SOLO:
 			digitalWrite(MESA_SWA, LOW);
@@ -81,23 +89,25 @@ void functionOn(int f) {
 }
 
 void functionOff(int f) {
-  currentFunction -= f;
   //handle output change to turn the SOLO/REV/EQ off
 	switch (f) {
   	case VAL_EQ:
+      currentProgram &= MASK_EQ_OFF;
 			digitalWrite(MESA_SWC, HIGH);
 			break;
 	  case VAL_REV:
-			digitalWrite(MESA_SWB, LOW);
+      currentProgram &= MASK_REV_OFF;
+			digitalWrite(MESA_SWB, HIGH);
 			break;
 	  case VAL_SOLO:
+      currentProgram &= MASK_SOLO_OFF;
 			digitalWrite(MESA_SWA, HIGH);
 			break;
 	}
 }
 
 void toggleFunction(int f) {
-  if (currentFunction & f == f) {
+  if ((currentProgram & f) == f) {
     functionOff(f);
   }
   else {
@@ -106,7 +116,7 @@ void toggleFunction(int f) {
 }
 
 void changeProgram(byte num) {
-    if (num <= VAL_CH2) {
+    if (num < VAL_CH2) {
       //change channel to CH1  
       setChannel(VAL_CH1);
     }
@@ -120,23 +130,23 @@ void changeProgram(byte num) {
       setChannel(VAL_CH3);
     }
 
-    byte functionFlags = num - currentChannel;
+    byte functionFlags = num & MASK_OMMIT_CHANNELS;
     
-    if (functionFlags & VAL_EQ == VAL_EQ) {
+    if ((functionFlags & VAL_EQ) == VAL_EQ) {
       functionOn(VAL_EQ);
     }
     else {
       functionOff(VAL_EQ);
     }
 
-    if (functionFlags & VAL_REV == VAL_REV) {
+    if ((functionFlags & VAL_REV) == VAL_REV) {
       functionOn(VAL_REV);
     }
     else {
       functionOff(VAL_REV);
     }
 
-    if (functionFlags & VAL_SOLO == VAL_SOLO) {
+    if ((functionFlags & VAL_SOLO) == VAL_SOLO) {
       functionOn(VAL_SOLO);
     }
     else {
@@ -152,8 +162,20 @@ void waitUntilButtonReleased() {
   }
 }
 
-void handleProgramChange(byte channel, byte number) {
+void handleProgramChange(byte channel, byte midiNumber) {
+  int number = VAL_CH2;
+  
   if (channel == MIDI_CHANNEL) {
+    if (midiNumber < MIDI_VAL_CH2) {
+      number = midiNumber + VAL_CH1;  
+    }
+    else if (midiNumber >= MIDI_VAL_CH2 && midiNumber < MIDI_VAL_CH3) {
+      number = midiNumber - MIDI_VAL_CH2 + VAL_CH2;
+    }
+    else {
+      number = midiNumber - MIDI_VAL_CH3 + VAL_CH3;
+    }
+    
     changeProgram(number);
   }
 }
@@ -184,7 +206,7 @@ void setup() {
   }
   
   //defaults: CH1, SOLO & EQ & REV off
-  setChannel(1);
+  setChannel(VAL_CH2);
   functionOff(VAL_EQ);
   functionOff(VAL_REV);
   functionOff(VAL_SOLO);
@@ -202,20 +224,21 @@ void loop() {
 
   if (!digitalRead(SW_CH1)) {
     if (currentChannel != VAL_CH1) {
-      btnConfig -= currentChannel;
+      btnConfig &= MASK_OMMIT_CHANNELS;
+      btnConfig |= VAL_CH1;
       lock = SW_CH1;
     }
   }
   else if (!digitalRead(SW_CH2)) {
     if (currentChannel != VAL_CH2) {
-      btnConfig -= currentChannel;
-      btnConfig += VAL_CH2;
+      btnConfig &= MASK_OMMIT_CHANNELS;
+      btnConfig |= VAL_CH2;
       lock = SW_CH2;
     }
   }
   else if (!digitalRead(SW_CH3)) {
     if (currentChannel != VAL_CH3) {
-      btnConfig -= currentChannel;
+      btnConfig &= MASK_OMMIT_CHANNELS;
       btnConfig += VAL_CH3;
       lock = SW_CH3;
     }
