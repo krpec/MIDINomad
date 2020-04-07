@@ -1,3 +1,11 @@
+/*
+ * MIDINomad Rev.5
+ * GNU GPL v3
+ * 
+ * Code by krpec - dittrich.r@gmail.com
+ * April 2020
+ */
+
 #include <MIDI.h>
 
 #define MIDI_CHANNEL 1
@@ -107,15 +115,6 @@ void functionOff(int f) {
 	}
 }
 
-void toggleFunction(int f) {
-  if ((currentProgram & f) == f) {
-    functionOff(f);
-  }
-  else {
-    functionOn(f);
-  }
-}
-
 void changeProgram(byte num) {
     if (num < VAL_CH2) {
       //change channel to CH1  
@@ -131,30 +130,26 @@ void changeProgram(byte num) {
       setChannel(VAL_CH3);
     }
 
-    byte functionFlags = num & MASK_OMMIT_CHANNELS;
-    
-    if ((functionFlags & VAL_EQ) == VAL_EQ) {
+    if ((num & VAL_EQ) == VAL_EQ) {
       functionOn(VAL_EQ);
     }
     else {
       functionOff(VAL_EQ);
     }
 
-    if ((functionFlags & VAL_REV) == VAL_REV) {
+    if ((num & VAL_REV) == VAL_REV) {
       functionOn(VAL_REV);
     }
     else {
       functionOff(VAL_REV);
     }
 
-    if ((functionFlags & VAL_SOLO) == VAL_SOLO) {
+    if ((num & VAL_SOLO) == VAL_SOLO) {
       functionOn(VAL_SOLO);
     }
     else {
       functionOff(VAL_SOLO);
     }
-
-    currentProgram = num;
 }
 
 void waitUntilButtonReleased() {
