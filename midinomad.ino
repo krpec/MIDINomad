@@ -3,6 +3,7 @@
  * GNU GPL v3
  * 
  * Code by krpec - dittrich.r@gmail.com
+ * Inspired by HappySwitch v2, created by Pasquale 'sid' Fiorillo
  * April 2020
  */
 
