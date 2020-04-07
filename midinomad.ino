@@ -47,23 +47,24 @@ void setChannel(int channel = VAL_CH2) {
   //handle output change to set correct channel & change the LEDs
   switch (channel) {
     case VAL_CH1:
-			digitalWrite(REL1, HIGH);
-			digitalWrite(REL2, HIGH);
+			//digitalWrite(REL1, HIGH);
+			//digitalWrite(REL2, HIGH);
 			
       digitalWrite(LED_CH1, HIGH);
       digitalWrite(LED_CH2, LOW);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH2:
-			digitalWrite(REL1, LOW);
+			//digitalWrite(REL1, LOW);
+			//digitalWrite(REL2, LOW);
 			
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, HIGH);
       digitalWrite(LED_CH3, LOW);
       break;
     case VAL_CH3:
-			digitalWrite(REL1, HIGH);
-			digitalWrite(REL2, LOW);
+			//digitalWrite(REL1, HIGH);
+			//digitalWrite(REL2, LOW);
 			
       digitalWrite(LED_CH1, LOW);
       digitalWrite(LED_CH2, LOW);
@@ -221,7 +222,8 @@ void loop() {
   //handle the buttons
   lock = 0;
   byte btnConfig = currentProgram;
-
+	byte currentChannel = btnConfig & MASK_PRESERVE_CHANNELS;
+	
   if (!digitalRead(SW_CH1)) {
     if (currentChannel != VAL_CH1) {
       btnConfig &= MASK_OMMIT_CHANNELS;
@@ -239,36 +241,36 @@ void loop() {
   else if (!digitalRead(SW_CH3)) {
     if (currentChannel != VAL_CH3) {
       btnConfig &= MASK_OMMIT_CHANNELS;
-      btnConfig += VAL_CH3;
+      btnConfig |= VAL_CH3;
       lock = SW_CH3;
     }
   }
   else if (!digitalRead(SW_EQ)) {
-    if (currentFunction & VAL_EQ == VAL_EQ) {
-      btnConfig -= VAL_EQ;
+    if ((btnConfig & VAL_EQ) == VAL_EQ) {
+      btnConfig &= MASK_EQ_OFF;
     }
     else {
-      btnConfig += VAL_EQ;
+      btnConfig |= VAL_EQ;
     }
 
     lock = SW_EQ;
   }
   else if (!digitalRead(SW_REV)) {
-    if (currentFunction & VAL_REV == VAL_REV) {
-      btnConfig -= VAL_REV;
+    if ((btnConfig & VAL_REV) == VAL_REV) {
+      btnConfig &= MASK_REV_OFF;
     }
     else {
-      btnConfig += VAL_REV;
+      btnConfig |= VAL_REV;
     }
 
     lock = SW_REV;
   }
   else if (!digitalRead(SW_SOLO)) {
-    if (currentFunction & VAL_SOLO == VAL_SOLO) {
-      btnConfig -= VAL_SOLO;
+    if ((btnConfig & VAL_SOLO) == VAL_SOLO) {
+      btnConfig &= MASK_SOLO_OFF;
     }
     else {
-      btnConfig += VAL_SOLO;
+      btnConfig |= VAL_SOLO;
     }
 
     lock = SW_SOLO;
